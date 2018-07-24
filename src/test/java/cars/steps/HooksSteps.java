@@ -70,7 +70,7 @@ public class HooksSteps {
         compareTrimsPage.defineEngineAndTransmission(car);
         cars.add(car);
 
-        softAssert.assertTrue(compareTrimsPage.getCarTitle().contains(researchPage.getCarFullName()));
+      softAssert.assertTrue(compareTrimsPage.getCarTitle().contains(researchPage.getCarFullName()),researchPage.getCarFullName()+" is in the title "+compareTrimsPage.getCarTitle() );
 
     }
 
@@ -110,8 +110,8 @@ public class HooksSteps {
             expectedTitle = String.format("%s %s %s", cars.get(i).getMap().get("year"), cars.get(i).getMap().get("make"), cars.get(i).getMap().get("model"));
 
             softAssert.assertEquals(actualTitle, expectedTitle);
-            softAssert.assertTrue(actualEngines.contains(cars.get(i).getMap().get("engine")));
-            softAssert.assertTrue(actualTransmissions.contains(cars.get(i).getMap().get("transmission")));
+            softAssert.assertTrue(actualEngines.contains(cars.get(i).getMap().get("engine")), "side-by-side comparison contains selected car engine " +cars.get(i).getMap().get("engine") );
+            softAssert.assertTrue(actualTransmissions.contains(cars.get(i).getMap().get("transmission")), "side-by-side comparison contains selected car transmission "+cars.get(i).getMap().get("transmission"));
             softAssert.assertAll();
 
         }
