@@ -69,8 +69,8 @@ public class HooksSteps {
         compareTrimsPage = new CompareTrimsPage();
         compareTrimsPage.defineEngineAndTransmission(car);
         cars.add(car);
-       // softAssert.assertTrue(compareTrimsPage.getCarTitle().contains("kkkkk"));
-         softAssert.assertTrue(compareTrimsPage.getCarTitle().contains(researchPage.getCarFullName()));
+
+        softAssert.assertTrue(compareTrimsPage.getCarTitle().contains(researchPage.getCarFullName()));
 
     }
 

@@ -36,7 +36,7 @@ public class BrowserFactory extends BaseEntity {
     public static WebDriver initDriver() {
 
         if (driver == null) {
-            switch (configProperties.getProperty("browser")) {
+            switch (System.getProperty("browser")) {
                 case CHROME:
                     setProperty("webdriver.chrome.driver", "chromedriver");
                     driver = new ChromeDriver(setChromeCapabilities());
